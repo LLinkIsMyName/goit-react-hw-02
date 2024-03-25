@@ -21,7 +21,7 @@ const App = () => {
         
     });
 
-    const handleReset = (feedbackType) => {
+    const updateFeedback = (feedbackType) => {
         if (feedbackType === "reset") {
             setFeedback({
                 good: 0,
@@ -45,7 +45,7 @@ const App = () => {
     return (
         <div className="box">
             <Description />
-            <Options totalFeedback={totalFeedback} handleReset={handleReset} />
+            <Options totalFeedback={totalFeedback} updateFeedback={updateFeedback} />
             {totalFeedback > 0 ? (<Feedback feedback={feedback} totalFeedback={totalFeedback} positiveFBPercentage={positiveFBpercentage}
             />) : (<Notification/>)}
         </div>
